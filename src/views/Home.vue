@@ -5,15 +5,23 @@
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
-            Test Page RiTa
+            Test Page
           </h1>
           <h2 class="subtitle">
-            balls
+            {{ $route.name }}
           </h2>
         </div>
       </div>
 </section>
 
+<section class="section">
+    <div class="container">
+      <h1 class="title">Path Info</h1>
+      <h2 class="subtitle">
+        {{ $route.params }}
+      </h2>
+    </div>
+  </section>
 
 <section class="section">
     <div class="container">
@@ -26,7 +34,7 @@
 
   <section class="section">
       <div class="container">
-        <h1 class="title">RiTa Markov</h1>
+        <h1 class="title">markov-string</h1>
         <h2 class="subtitle">
           {{ genText }}
         </h2>
@@ -63,9 +71,9 @@ export default {
   },
   methods: {
     ritaMarkov: function() {
-      let rm = new this.$rita.RiMarkov(4);
-      rm.loadText(this.kickText);
-      this.genText = rm.generateSentences(10).join(" ");
+      //let rm = new this.$rita.RiMarkov(4);
+      //rm.loadText(this.kickText);
+      this.genText = "placeholder"//rm.generateSentences(10).join(" ");
     }
   },
   created: function() {
