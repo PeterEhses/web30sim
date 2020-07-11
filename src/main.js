@@ -3,7 +3,6 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
-import Buefy from 'buefy'
 
 // axios for api / file consumption
 
@@ -12,11 +11,8 @@ import VueAxios from 'vue-axios'
 
 Vue.use(VueAxios, axios)
 
-// Buefy pretty things
-
-import 'material-design-icons-iconfont/dist/material-design-icons.css'
-import 'buefy/dist/buefy.css'
-Vue.use(Buefy)
+// vuetify because better var support supposedly
+import vuetify from '@/plugins/vuetify'
 
 // rita text generation things
 
@@ -32,6 +28,7 @@ Vue.prototype.$markov = new Markov(data, { stateSize: 2 })
 Vue.config.productionTip = false
 
 new Vue({
+  vuetify,
   router,
   store,
   render: h => h(App)

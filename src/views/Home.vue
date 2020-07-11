@@ -1,7 +1,12 @@
 <template>
-  <div class="home">
 
-    <section class="hero is-dark is-bold ">
+  <v-app id="home">
+
+
+    <v-parallax
+    dark
+    src="https://picsum.photos/seed/picsum/1024"
+    >
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
@@ -12,16 +17,19 @@
           </h2>
         </div>
       </div>
-</section>
+</v-parallax>
 
-<section class="section">
+<v-card
+    class="mx-auto"
+    max-width="400"
+  >
     <div class="container">
-      <h1 class="title">Path Info</h1>
-      <h2 class="subtitle">
+      <v-card-title>Path Info</v-card-title>
+       <v-card-text class="text--primary">
         {{ $route.params }}
-      </h2>
+      </v-card-text>
     </div>
-  </section>
+  </v-card>
 
 <section class="section">
     <div class="container">
@@ -41,7 +49,7 @@
       </div>
     </section>
 
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -53,6 +61,7 @@ export default {
   },
   data: function() {
     return {
+      drawer: null,
         kickText : "",
         genText : "",
       }
